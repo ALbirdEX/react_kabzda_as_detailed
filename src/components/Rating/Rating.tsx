@@ -1,11 +1,20 @@
 import React from 'react';
 
-
 type RatingPropsType = {
     value: 0 | 1 | 2 | 3 | 4 | 5
 }
 
 export function Rating(props: RatingPropsType) {
+    return (
+        <div>
+            <Star selected={props.value > 0}/>
+            <Star selected={props.value > 1}/>
+            <Star selected={props.value > 2}/>    {/*span*/}
+            <Star selected={props.value > 3}/>
+            <Star selected={props.value > 4}/>
+        </div>
+    )
+/*
     if (props.value === 1) {
         return (
             <div>
@@ -70,7 +79,7 @@ export function Rating(props: RatingPropsType) {
             <Star selected={false}/>
         </div>
     );
-
+*/
 }
 
 type StarPropsType = {
@@ -78,7 +87,7 @@ type StarPropsType = {
 }
 
 function Star(props: StarPropsType) {
-    if (props.selected === true) {        //Можно упростить до props.selected по умолчанию true
+    if (props.selected) {           //props.selected === true (по умолчанию  true)
         return <span><b>Star </b> </span>
     } else {
         return <span>Star </span>

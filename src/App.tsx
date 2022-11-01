@@ -4,6 +4,7 @@ import Accordion from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
 import {MyTitle} from "./components/MyTitle";
 import {RedBlack} from "./components/RedBlack";
+import {OnOff} from "./components/OnOff/OnOff";
 
 //function declaration
 function App() {
@@ -13,8 +14,8 @@ function App() {
             <PageTitle title={"This is APP components"}/>
             <PageTitle title={"My friends"}/>
             <MyTitle title={"Идём дальше"}/>
-            <Accordion titleValue={"Menu"} collapsed={true}/>
-            <Accordion titleValue={"Users"} collapsed={false}/>
+            <Accordion titleValue={"Menu"} collapsed={true}/> {/*свернут - да*/}
+            <Accordion titleValue={"Users"} collapsed={false}/> {/*свернут - нет*/}
             <Rating value={0}/>
             <Rating value={1}/>
             <Rating value={2}/>
@@ -22,6 +23,8 @@ function App() {
             <Rating value={4}/>
             <Rating value={5}/>
             <RedBlack value={"Black"}/>
+
+            <OnOff on={true}/>
         </div>
     );
 }
