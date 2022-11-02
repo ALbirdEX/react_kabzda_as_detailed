@@ -5,13 +5,13 @@ type OnOffPropsType = {
     on: boolean
 }
 
+
 export function OnOff(props: OnOffPropsType) {
     return (
-            <div>
-                <button className={props.on ? `${s.buttonOn} ${s.colorOn}` : s.buttonOn}>On</button>
-                <button className={!props.on ? s.buttonOff + ' ' + s.colorOff : s.buttonOn}>On</button>
-                <button className={props.on ? s.circle + ' ' + s.colorOn : s.circle + ' ' + s.colorOff}></button>
-            </div>
-
+        <div>
+            <button className={props.on ? `${s.button} ${s.colorOn}` : s.button}><h3>On</h3></button>
+            <button className={!props.on ? s.button + ' ' + s.colorOff : s.button}><h3>Off</h3></button>
+            <button className={`${s.circle} ${props.on ? s.colorOn : s.colorOff}`}></button>
+        </div>
     )
 }
