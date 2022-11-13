@@ -6,6 +6,8 @@ import {MyTitle} from "./components/MyTitle";
 import {RedBlack} from "./components/RedBlack";
 import {OnOff} from "./components/OnOff/OnOff";
 import {OnOff2} from "./components/OnOff/OnOff2";
+import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
+import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 
 //function declaration
 function App() {
@@ -16,13 +18,15 @@ function App() {
     /*  const onClickHandler = () => setOn(!on)*/
 
     return (
-        <div>
+        <div className={"App"}>
             <PageTitle title={"This is APP components"}/>
             <PageTitle title={"My friends"}/>
             <MyTitle title={"Идём дальше"}/>
             <Accordion titleValue={"Menu"} collapsed={true}/> {/*свернут - да*/}
             <Accordion titleValue={"Users"} collapsed={false}/> {/*свернут - нет*/}
-            <Rating value={5}/>
+            <UncontrolledAccordion titleValue={"Uncontrolled"}/>
+            <UncontrolledRating />
+            <Rating value={0}/>
             <Rating value={1}/>
             <Rating value={2}/>
             <Rating value={3}/>
@@ -30,7 +34,7 @@ function App() {
             <Rating value={5}/>
             <RedBlack value={"Black"}/>
 
-            <OnOff on={false}/>
+            <OnOff />
             <OnOff2 on={on}
                     setOn={setOn}/>
         </div>

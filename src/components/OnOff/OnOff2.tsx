@@ -21,7 +21,7 @@ export function OnOff2(props: OnOff2PropsType) {
             <button onClick={onClickHandlerOff} className={!props.on ? s.button + ' ' + s.colorOff : s.button}>
                 <h3>Off</h3>
             </button>
-            <button className={`${s.circle} ${props.on ? s.colorOn : s.colorOff}`}></button>
+            <button className={`${s.circle} ${props.on ? s.colorOn : s.colorOff}`}/>
         </div>
     )
 }
