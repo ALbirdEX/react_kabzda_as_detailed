@@ -11,11 +11,7 @@ function Accordion(props: AccordionPropsType) {
 
     return (
         <div>
-            <AccordionTitle title={props.titleValue}
-                            collapsed={collapsed}
-                            setCollapsed={setCollapsed}/>
-
-            <button onClick={()=>{setCollapsed(!collapsed)}}>TOGGLE</button>
+            <AccordionTitle title={props.titleValue} onClick={() =>{setCollapsed(!collapsed)}}/>
 
             {!collapsed && <AccordionBody/>} {/*меняем значение тем самым получаем false
                                                     на котором и останавливаемся
@@ -43,13 +39,12 @@ function Accordion(props: AccordionPropsType) {
 
 type AccordionTitlePorpsType = {
     title: string
-    collapsed: boolean
-    setCollapsed: (collapsed: boolean)=>void
-}
+    onClick: () => void
+    }
 
 function AccordionTitle(props: AccordionTitlePorpsType) {
     return (
-        <h3 onClick={()=>{props.setCollapsed(!props.collapsed)}}>*** {props.title} ***</h3>
+        <h3 onClick={()=>{props.onClick()}}>*** {props.title} ***</h3>
     );
 }
 
