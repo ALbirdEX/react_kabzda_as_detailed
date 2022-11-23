@@ -7,10 +7,8 @@ type OnOff2PropsType = {
 }
 
 export function OnOff2(props: OnOff2PropsType) {
-    /* let [on, setOn] = useState(true)*/
 
     const onClickHandlerOn = () => props.setOn(true)
-
     const onClickHandlerOff = () => props.setOn(false)
 
     return (
