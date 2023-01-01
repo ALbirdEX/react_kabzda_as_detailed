@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
-import Accordion from "./components/Accordion/Accordion";
+import Accordion, {ItemType} from "./components/Accordion/Accordion";
 import {Rating, valueType} from "./components/Rating/Rating";
 import {MyTitle} from "./components/MyTitle";
 import {RedBlack} from "./components/RedBlack";
@@ -12,12 +12,10 @@ import {OnOff} from "./components/OnOff/OnOff";
 import {UncontrolledOnOff2} from "./components/UncontrolledOnOff/UncontrolledOnOff2";
 import {UncontrolledInput} from "./components/UncontrolledInput/UncontrolledInput";
 import {TrackValueOfUncontrolledInput} from "./components/UncontrolledInput/TrackValueOfUncontrolledInput";
-import GetValueOfUncontrolledInputByButtonPres
-    from "./components/UncontrolledInput/GetValueOfUncontrolledInputByButtonPres";
+import GetValueOfUncontrolledInputByButtonPres from "./components/UncontrolledInput/GetValueOfUncontrolledInputByButtonPres";
 import {ControlledInput} from "./components/ControlledInput/ControlledInput";
 import {ControlledCheckBox} from "./components/ControlledInput/ControlledCheckBox";
 import ControlledSelect from "./components/ControlledInput/ControlledSelect";
-import {Select} from "./components/Select/Select";
 
 
 //function declaration
@@ -27,7 +25,7 @@ function App() {
     let [on, setOn] = useState<boolean>(false)
     let [switchOn, setSwitchOn] = useState<boolean>(false)
     let [ratingValue, setRatingValue] = useState<valueType>(0)
-    let [collapsed, setCollapsed] = useState<boolean>(true)
+    let [collapsed, setCollapsed] =useState<boolean>(true)
     let [value, setValue] = useState("")
 
     const friend = [
@@ -48,16 +46,6 @@ function App() {
         setCollapsed(!collapsed)
     }
 
-    const itemSelect = [
-        {value: 1, title: "Mogilev"},
-        {value: 2, title: "Minsk"},
-        {value: 3, title: "Kiev"},
-    ]
-
-    const [valueItem, setValueItem] = useState(2)
-    const clickItem = (value: any) => setValueItem(value)
-
-
     return (
         <div className={"App"}>
             <PageTitle title={"This is APP components"}/>
@@ -68,7 +56,7 @@ function App() {
             <h2>{`samurai ${value}`}</h2>
             <Accordion titleValue={"Menu"}
                        collapsed={collapsed}
-                //setCollapsed={setCollapsed}
+                       //setCollapsed={setCollapsed}
                        setCollapsed={collapsedHandler}
                        items={friend}
                        onClickItem={onClickHandler}/>
@@ -81,15 +69,14 @@ function App() {
             <RedBlack value={"Black"}/>
 
             <h1>Uncontrolled</h1>
-            <h3>{switchOn.toString()}</h3>
-            <UncontrolledOnOff onChange={setSwitchOn}/>
+            <UncontrolledOnOff onChange={setSwitchOn}/> <h3>{switchOn.toString()}</h3>
             <UncontrolledOnOff2/>
 
             <h1>Controlled</h1>
             <OnOff2 on={on}
                     setOn={setOn}/>
             <OnOff on={on}
-                //onChange={(on) => {setOn(on)}}
+                   //onChange={(on) => {setOn(on)}}
                    onChange={setOn}/>
 
             <h1>Uncontrolled</h1>
@@ -103,11 +90,6 @@ function App() {
             <ControlledCheckBox/>
             <div>***</div>
             <ControlledSelect/>
-            <div>
-                <Select onChange={clickItem} items={itemSelect} value={valueItem}/>
-
-                {"GO"}
-            </div>
         </div>
     );
 }
