@@ -11,7 +11,6 @@ function Accordion(props: AccordionPropsType) {
     return (
         <div>
             <AccordionTitle title={props.titleValue} onClick={() =>{setCollapsed(!collapsed)}}/>
-
             {!collapsed && <AccordionBody/>} {/*меняем значение тем самым получаем false
                                                     на котором и останавливаемся
                                                     по умолчанию - true*/}

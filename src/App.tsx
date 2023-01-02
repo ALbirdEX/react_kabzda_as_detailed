@@ -6,7 +6,7 @@ import {MyTitle} from "./components/MyTitle";
 import {RedBlack} from "./components/RedBlack";
 import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOff";
 import {OnOff2} from "./components/OnOff/OnOff2";
-import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
+import UncontrolledAccordion from "./components/UncontrolledAccordion_Reducer/UncontrolledAccordionReducer";
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 import {OnOff} from "./components/OnOff/OnOff";
 import {UncontrolledOnOff2} from "./components/UncontrolledOnOff/UncontrolledOnOff2";
@@ -18,6 +18,9 @@ import {ControlledInput} from "./components/ControlledInput/ControlledInput";
 import {ControlledCheckBox} from "./components/ControlledInput/ControlledCheckBox";
 import ControlledSelect from "./components/ControlledInput/ControlledSelect";
 import {Select} from "./components/Select/Select";
+import UncontrolledAccordionReducer from "./components/UncontrolledAccordion_Reducer/UncontrolledAccordion";
+import AccordionReducer from "./components/UncontrolledAccordion_Reducer/UncontrolledAccordionReducer";
+import Example1 from "./components/ReactMemo";
 
 
 //function declaration
@@ -106,6 +109,8 @@ function App() {
             <div>
                 <Select onChange={clickItem} items={itemSelect} value={valueItem}/>
             </div>
+            <AccordionReducer titleValue={"Reducer accordion"}/>
+            <Example1/>
         </div>
     );
 }
