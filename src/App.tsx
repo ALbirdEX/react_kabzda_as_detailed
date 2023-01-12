@@ -19,8 +19,9 @@ import {ControlledCheckBox} from "./components/ControlledInput/ControlledCheckBo
 import ControlledSelect from "./components/ControlledInput/ControlledSelect";
 import {Select} from "./components/Select/Select";
 import UncontrolledAccordionReducer from "./components/UncontrolledAccordion_Reducer/UncontrolledAccordion";
-import AccordionReducer from "./components/UncontrolledAccordion_Reducer/UncontrolledAccordionReducer";
-import Example1 from "./components/ReactMemo";
+import ReactMemo from "./components/ReactMemo";
+import DifficultCount from "./components/UseMemo/DifficultCount";
+import HelpsForReactMemo from "./components/UseMemo/HelpsForReactMemo";
 
 
 //function declaration
@@ -109,8 +110,12 @@ function App() {
             <div>
                 <Select onChange={clickItem} items={itemSelect} value={valueItem}/>
             </div>
-            <AccordionReducer titleValue={"Reducer accordion"}/>
-            <Example1/>
+            <UncontrolledAccordionReducer titleValue={"Reducer accordion"}/>
+            <h1>ReactMemo</h1>
+            <ReactMemo/>
+            <h1>UseMemo</h1>
+            <DifficultCount/>
+            <HelpsForReactMemo/>
         </div>
     );
 }
