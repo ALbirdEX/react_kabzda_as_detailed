@@ -12,7 +12,6 @@ const Users = React.memo(UserSecret)
 
 
 const HelpsForReactMemo = () => {
-    console.log("HelpsForReactMemo")
     const [counter, setCounter] = useState(0)
     const [users, setUsers] = useState(['Alex', 'Victor', 'Dima'])
 

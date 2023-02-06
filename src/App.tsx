@@ -22,6 +22,9 @@ import UncontrolledAccordionReducer from "./components/UncontrolledAccordion_Red
 import ReactMemo from "./components/ReactMemo";
 import DifficultCount from "./components/UseMemo/DifficultCount";
 import HelpsForReactMemo from "./components/UseMemo/HelpsForReactMemo";
+import Dima2 from "./dopDima/Dima2/Dima2";
+import LikeUseCallback from "./components/likeUseCallback";
+import UseState from "./components/UseState";
 
 
 //function declaration
@@ -116,6 +119,12 @@ function App() {
             <h1>UseMemo</h1>
             <DifficultCount/>
             <HelpsForReactMemo/>
+            <LikeUseCallback/>
+            <hr/>
+            <h1>useState навароченный</h1>
+            <UseState/>
+            <hr/>
+            <Dima2/>
         </div>
     );
 }
