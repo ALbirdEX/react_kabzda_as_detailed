@@ -14,7 +14,6 @@ import {UncontrolledInput} from "./components/UncontrolledInput/UncontrolledInpu
 import {TrackValueOfUncontrolledInput} from "./components/UncontrolledInput/TrackValueOfUncontrolledInput";
 import GetValueOfUncontrolledInputByButtonPres
     from "./components/UncontrolledInput/GetValueOfUncontrolledInputByButtonPres";
-import {ControlledInput} from "./components/ControlledInput/ControlledInput";
 import {ControlledCheckBox} from "./components/ControlledInput/ControlledCheckBox";
 import ControlledSelect from "./components/ControlledInput/ControlledSelect";
 import {Select} from "./components/Select/Select";
@@ -25,17 +24,24 @@ import HelpsForReactMemo from "./components/UseMemo/HelpsForReactMemo";
 import Dima2 from "./dopDima/Dima2/Dima2";
 import LikeUseCallback from "./components/likeUseCallback";
 import UseState from "./components/UseState";
+import {UseEffectUsed} from "./components/useEffect/useEffect";
+import {SetIntervalClock1} from "./components/useEffect/Clock";
+import {SetIntervalClock2} from "./components/useEffect/Clock2";
+import {SetIntervalClock3} from "./components/useEffect/Clock3Dima";
+import {ClockAnalog} from "./components/useEffect/Clock/Clock3DimaAnalog";
 
 
 //function declaration
 function App() {
-    console.log("App rendering")
-
     let [on, setOn] = useState<boolean>(false)
     let [switchOn, setSwitchOn] = useState<boolean>(false)
     let [ratingValue, setRatingValue] = useState<valueType>(0)
     let [collapsed, setCollapsed] = useState<boolean>(true)
     let [value, setValue] = useState("")
+
+
+    const [mode, setMode] = useState("analog")
+    const selectMode = (value: string) => setMode(value)
 
     const friend = [
         {title: "Dima", value: 1},
@@ -62,7 +68,7 @@ function App() {
     ]
 
     const [valueItem, setValueItem] = useState(2)
-    const clickItem = (value: any) => setValueItem(value)
+    const clickItem = (value: number) => setValueItem(value)
 
 
     return (
@@ -105,7 +111,7 @@ function App() {
             <div><GetValueOfUncontrolledInputByButtonPres/></div>
 
             <h1>Controlled</h1>
-            <ControlledInput/>
+            <UncontrolledInput/>
             <div>***</div>
             <ControlledCheckBox/>
             <div>***</div>
@@ -125,6 +131,15 @@ function App() {
             <UseState/>
             <hr/>
             <Dima2/>
+            <UseEffectUsed/>
+           {/* <h1>Clock 1</h1>
+            <h2><SetIntervalClock1/></h2>*/}
+         {/*   <h1>Clock 2</h1>
+            <h2><SetIntervalClock2/></h2>*/}
+            <h1>Clock Dima</h1>
+            <h2><SetIntervalClock3/></h2>
+            <ClockAnalog mode={mode} onChange={selectMode}/>
+
         </div>
     );
 }
